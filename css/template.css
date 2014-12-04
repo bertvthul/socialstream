@@ -1,0 +1,326 @@
+/* Global */
+body {
+	font-family: "Roboto";
+	font-weight: 300;
+}
+a {
+	color:#000;
+}
+
+
+
+.centereds {
+	width:990px;
+	margin:0 auto;
+}
+.fbox {position:relative;width:100%;}
+.fboxbefore {padding-top: 100%; /* initial ratio of 1:1*/}
+.fboxcontent {position:absolute;top:0;left:0;bottom:0;right:0;}
+.fbox.wide .fboxbefore {padding-top:50%;}
+.fbox.high .fboxbefore {padding-top:200%;}
+.borderRadius {-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;}
+.borderRadiusTL {-webkit-border-top-left-radius: 10px;-moz-border-radius-topleft: 10px;border-top-left-radius: 10px;}
+.borderRadiusTR {-webkit-border-top-right-radius: 10px;-moz-border-radius-topright: 10px;border-top-right-radius: 10px;}
+.borderRadiusBL {-webkit-border-bottom-left-radius: 10px;-moz-border-radius-bottomleft: 10px;border-bottom-left-radius: 10px;}
+.borderRadiusBR {-webkit-border-bottom-right-radius: 10px;-moz-border-radius-bottomright: 10px;border-bottom-right-radius: 10px;}
+
+
+
+
+/* STREAM */
+ul.socialStream {
+	margin:0;
+	padding:0;
+}
+
+li.socialItem {
+	margin:0;
+	padding:0;
+	list-style:none;
+	
+	float:left;
+	position: relative;
+}
+
+
+li.socialItem .fboxcontent {
+	margin:2px;
+	padding:20px;
+	/* border:1px solid #eaeaea; */
+	background-color:#ef7900;
+	background-repeat: no-repeat;
+    background-position: center; 
+    
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	
+	overflow:hidden;
+	
+	word-break: break-word;
+}
+
+/* link */
+a.fboxlink {
+	display:block;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index: 2;
+}
+
+
+/* text */
+li.socialItem .text {
+	position: relative;
+	z-index: 2;
+}
+li.socialItem.hasImage .text {
+
+	position: absolute;
+	bottom:0px;
+	opacity:0;
+	left:10px;
+	right:30px;
+	color:#fff;
+	z-index: 2;
+	
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+li.socialItem.hasImage:hover .text {
+	opacity:1;
+	bottom:12px;
+}
+
+ul.colorfixed li.socialItem.retweeted .text, ul.colorfixed li.socialItem.retweeted .text a {
+	color:#fff;
+}
+ul.colorfixed li.socialItem.retweeted .fboxcontent {
+	background-color:#333;
+}
+
+li.socialItem.hasImage.retweeted .text {
+	right:70px;
+}
+li.socialItem.hasImage .text a {
+	color:#fff;
+}
+
+
+
+/* hasVideo */
+li.socialItem.hasVideo {
+	opacity:0.5;
+}
+li.socialItem.hasVideo:before {
+	width:50px;
+	height:50px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	content:"...";
+	margin-top:-25px;
+	margin-left:-25px;
+	line-height: 50px;
+	background: #f00;
+	z-index: 2;
+}
+
+/* bg shade */
+li.socialItem .bgShade {
+	position: absolute;
+	bottom:0;
+	left:0;
+	top:0;
+	right:0;
+	z-index: 1;
+	background:url("../images/bottom_shade.png") no-repeat bottom left;
+}
+li.socialItem.hasNoImage .bgShade {
+	opacity:0.2;
+}
+
+
+
+
+/* highlighted */
+li.socialItem.highlight.hasNoImage .text {
+	font-size: 26pt;
+	font-weight: 100;
+}
+
+
+
+
+
+
+
+/* date */
+li.socialItem .date {
+	position: absolute;
+	top:-20px;
+	right:0;
+	color:#fff;
+	line-height:30px;
+	padding:0 6px;
+	opacity:0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	z-index: 2;
+}
+li.socialItem .date a {
+	color:#fff;
+}
+li.socialItem:hover .date {
+	opacity:1;
+	top:0;
+}
+
+
+
+
+
+
+/* user block */
+li.socialItem .user {
+	position: absolute;
+	bottom:10px;
+	right:10px;
+	z-index: 2;
+}
+.user .userImage {
+	-webkit-border-radius: 50px;-moz-border-radius: 50px;border-radius: 50px;
+	margin-right:10px;
+}
+.user .userName {
+	display:none;
+}
+.user:hover .userName {
+	display:inline;
+}
+
+
+
+
+/* retweeted */
+li.socialItem .retweets {
+	position: absolute;
+	bottom:10px;
+	right:10px;
+	color:#fff;
+	font-size: 8pt;
+	display: none;
+}
+li.socialItem:hover .retweets {
+	display:block;
+}
+
+
+
+
+/* widths for different cols */
+ul.cols10 li.socialItem {width:10%;}
+ul.cols10 li.socialItem.wide, ul.cols10 li.socialItem.highlight {width:20%;}
+ul.cols9 li.socialItem {width:11.1111%;}
+ul.cols9 li.socialItem.wide, ul.cols9 li.socialItem.highlight {width:22.2222%;}
+ul.cols8 li.socialItem {width:12.5%;}
+ul.cols8 li.socialItem.wide, ul.cols8 li.socialItem.highlight {width:25%;}
+ul.cols7 li.socialItem {width:14.2857%;}
+ul.cols7 li.socialItem.wide, ul.cols7 li.socialItem.highlight {width:28.5714%;}
+ul.cols6 li.socialItem {width:16.6666%;}
+ul.cols6 li.socialItem.wide, ul.cols6 li.socialItem.highlight {width:33.3333%;}
+ul.cols5 li.socialItem {width:20%;}
+ul.cols5 li.socialItem.wide, ul.cols5 li.socialItem.highlight {width:40%;}
+ul.cols4 li.socialItem {width:25%;}
+ul.cols4 li.socialItem.wide, ul.cols4 li.socialItem.highlight {width:50%;}
+ul.cols3 li.socialItem {width:33.3333%;}
+ul.cols3 li.socialItem.wide, ul.cols3 li.socialItem.highlight {width:66.6666%;}
+ul.cols2 li.socialItem {width:50%;}
+ul.cols2 li.socialItem.wide, ul.cols2 li.socialItem.highlight {width:100;}
+
+
+
+
+@media only screen and (max-width: 1000px) {
+	/* widths for different cols */
+	ul.cols10 li.socialItem {width:11.1111%;}
+	ul.cols10 li.socialItem.wide, ul.cols10 li.socialItem.highlight {width:22.2222%;}
+	ul.cols9 li.socialItem {width:12.5%;}
+	ul.cols9 li.socialItem.wide, ul.cols9 li.socialItem.highlight {width:25%;}
+	ul.cols8 li.socialItem {width:14.2857%;}
+	ul.cols8 li.socialItem.wide, ul.cols8 li.socialItem.highlight {width:28.5714%;}
+	ul.cols7 li.socialItem {width:16.6666%;}
+	ul.cols7 li.socialItem.wide, ul.cols7 li.socialItem.highlight {width:33.3333%;}
+	ul.cols6 li.socialItem {width:20%;}
+	ul.cols6 li.socialItem.wide, ul.cols6 li.socialItem.highlight {width:40%;}
+	ul.cols5 li.socialItem {width:25%;}
+	ul.cols5 li.socialItem.wide, ul.cols5 li.socialItem.highlight {width:50%;}
+	ul.cols4 li.socialItem {width:33.3333%;}
+	ul.cols4 li.socialItem.wide, ul.cols4 li.socialItem.highlight {width:66.6666%;}
+	ul.cols3 li.socialItem {width:50%;}
+	ul.cols3 li.socialItem.wide, ul.cols3 li.socialItem.highlight {width:100%;}
+	
+
+}
+
+@media only screen and (max-width: 820px) {
+	/* widths for different cols */
+	ul.cols10 li.socialItem {width:12.5%;}
+	ul.cols10 li.socialItem.wide, ul.cols10 li.socialItem.highlight {width:25%;}
+	ul.cols9 li.socialItem {width:14.2857%;}
+	ul.cols9 li.socialItem.wide, ul.cols9 li.socialItem.highlight {width:28.5714%;}
+	ul.cols8 li.socialItem {width:16.6666%;}
+	ul.cols8 li.socialItem.wide, ul.cols8 li.socialItem.highlight {width:33.3333%;}
+	ul.cols7 li.socialItem {width:20%;}
+	ul.cols7 li.socialItem.wide, ul.cols7 li.socialItem.highlight {width:40%;}
+	ul.cols6 li.socialItem {width:25%;}
+	ul.cols6 li.socialItem.wide, ul.cols6 li.socialItem.highlight {width:50%;}
+	ul.cols5 li.socialItem {width:33.3333%;}
+	ul.cols5 li.socialItem.wide, ul.cols5 li.socialItem.highlight {width:66.6666%;}
+	ul.cols4 li.socialItem {width:50%;}
+	ul.cols4 li.socialItem.wide, ul.cols4 li.socialItem.highlight {width:100%;}
+
+}
+
+
+
+
+@media only screen and (max-width: 700px) {
+	/* widths for different cols */
+	ul.cols10 li.socialItem {width:14.2857%;}
+	ul.cols10 li.socialItem.wide, ul.cols10 li.socialItem.highlight {width:28.5714%;}
+	ul.cols9 li.socialItem {width:16.6666%;}
+	ul.cols9 li.socialItem.wide, ul.cols9 li.socialItem.highlight {width:33.3333%;}
+	ul.cols8 li.socialItem {width:20%;}
+	ul.cols8 li.socialItem.wide, ul.cols8 li.socialItem.highlight {width:40%;}
+	ul.cols7 li.socialItem {width:25%;}
+	ul.cols7 li.socialItem.wide, ul.cols7 li.socialItem.highlight {width:50%;}
+	ul.cols6 li.socialItem {width:33.3333%;}
+	ul.cols6 li.socialItem.wide, ul.cols6 li.socialItem.highlight {width:66.6666%;}
+	ul.cols5 li.socialItem {width:50%;}
+	ul.cols5 li.socialItem.wide, ul.cols5 li.socialItem.highlight {width:100%;}
+	
+}
+
+@media only screen and (max-width: 620px) {
+	/* widths for different cols */
+	ul.cols10 li.socialItem {width:16.6666%;}
+	ul.cols10 li.socialItem.wide, ul.cols10 li.socialItem.highlight {width:33.3333%;}
+	ul.cols9 li.socialItem {width:20%;}
+	ul.cols9 li.socialItem.wide, ul.cols9 li.socialItem.highlight {width:40%;}
+	ul.cols8 li.socialItem {width:25%;}
+	ul.cols8 li.socialItem.wide, ul.cols8 li.socialItem.highlight {width:50%;}
+	ul.cols7 li.socialItem {width:33.3333%;}
+	ul.cols7 li.socialItem.wide, ul.cols7 li.socialItem.highlight {width:66.6666%;}
+	ul.cols6 li.socialItem {width:50%;}
+	ul.cols6 li.socialItem.wide, ul.cols6 li.socialItem.highlight {width:100%;}
+
+}
+
+
