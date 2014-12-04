@@ -16,7 +16,7 @@ $(document).ready(function(){
 		  itemSelector: '.socialItem',
 		  gutter: 0
 		});
-	}, 200); 
+	}, 210); 
 	
 	//$(".fancybox2").fancybox();
 });
